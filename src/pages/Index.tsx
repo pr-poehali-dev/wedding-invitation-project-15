@@ -137,9 +137,9 @@ export default function Index() {
               fontStyle: "italic",
             }}
           >
-            Александр
+            Сергей
             <br />
-            &amp; Анастасия
+            &amp; Елизавета
           </h1>
 
           <div className="flex items-center justify-center gap-5 mb-8">
@@ -771,7 +771,7 @@ export default function Index() {
       {/* ── FOOTER ── */}
       <footer className="py-10 text-center" style={{ background: "var(--blue-deep)" }}>
         <p className="font-cormorant text-3xl italic mb-1" style={{ color: "#fff" }}>
-          Александр &amp; Анастасия
+          Сергей &amp; Елизавета
         </p>
         <p className="text-xs tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.45)" }}>
           12 · 09 · 2026
