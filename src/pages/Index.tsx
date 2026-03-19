@@ -128,7 +128,7 @@ export default function Index() {
           </div>
 
           <h1
-            className="font-cormorant mb-4"
+            className="font-cormorant my-2 py-[5px]"
             style={{
               fontSize: "clamp(3rem, 10vw, 6.5rem)",
               lineHeight: 1.05,
