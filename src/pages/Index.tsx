@@ -121,12 +121,6 @@ export default function Index() {
             Вы приглашены
           </p>
 
-          <div className="flex items-center justify-center gap-5 mb-5">
-            <div className="h-px w-14" style={{ background: "var(--pink-accent)" }} />
-            <span style={{ color: "var(--pink-accent)", fontSize: "1.4rem" }}>❀</span>
-            <div className="h-px w-14" style={{ background: "var(--pink-accent)" }} />
-          </div>
-
           <h1
             className="font-cormorant my-2 py-[5px]"
             style={{
