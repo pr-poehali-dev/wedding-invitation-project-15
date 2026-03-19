@@ -136,10 +136,12 @@ export default function Index() {
             Сергей
           </h1>
 
-          <div className="flex items-center justify-center gap-5 mb-8">
-            <div className="h-px w-14" style={{ background: "var(--pink-accent)" }} />
-            <span style={{ color: "var(--pink-accent)", fontSize: "1.4rem" }}>❀</span>
-            <div className="h-px w-14" style={{ background: "var(--pink-accent)" }} />
+          <div className="flex items-center justify-center mb-8 mt-4">
+            <svg width="90" height="48" viewBox="0 0 90 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="30" cy="24" r="18" stroke="#c8849a" strokeWidth="3" fill="none"/>
+              <circle cx="60" cy="24" r="18" stroke="#4a7096" strokeWidth="3" fill="none"/>
+              <path d="M45 14 Q45 24 45 34" stroke="#c8849a" strokeWidth="1" strokeDasharray="2 2" opacity="0.4"/>
+            </svg>
           </div>
 
           <p
