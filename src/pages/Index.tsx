@@ -148,10 +148,7 @@ export default function Index() {
             className="font-cormorant text-2xl mb-2"
             style={{ color: "var(--blue-mid)", fontStyle: "italic" }}
           >
-            12 сентября 2026
-          </p>
-          <p className="text-xs tracking-widest uppercase mb-10" style={{ color: "var(--text-muted)" }}>
-            Начало в 15:00 · Москва
+            21 июня 2026
           </p>
 
           <a
