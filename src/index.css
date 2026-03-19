@@ -4,6 +4,17 @@
 
 @layer base {
   :root {
+    /* Wedding palette */
+    --bg-cream: #faf8f5;
+    --blue-deep: #2c4a6e;
+    --blue-mid: #4a7096;
+    --blue-light: #c5ddf0;
+    --blue-section: #f0f6fc;
+    --blue-border: #d4e8f7;
+    --pink-accent: #c8849a;
+    --pink-soft: #fce8ef;
+    --text-muted: #7a8fa6;
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -98,4 +109,16 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.font-cormorant {
+  font-family: "Cormorant Garamond", "Cormorant", serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
