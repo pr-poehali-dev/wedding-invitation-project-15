@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
-const WEDDING_DATE = new Date("2026-09-12T15:00:00");
+const WEDDING_DATE = new Date("2026-06-21T14:00:00");
 const FLORAL_IMAGE =
   "https://cdn.poehali.dev/projects/2c19be70-82ff-4474-942e-2256ab01f504/files/8378822f-41cf-4d8c-a792-3da821e0fbd6.jpg";
 
@@ -234,7 +234,7 @@ export default function Index() {
             style={{ border: "1px solid var(--blue-border)" }}
           >
             <div className="py-4" style={{ background: "var(--blue-deep)" }}>
-              <p className="text-white uppercase tracking-widest text-sm font-light">Сентябрь 2026</p>
+              <p className="text-white uppercase tracking-widest text-sm font-light">Июнь 2026</p>
             </div>
             <div className="py-10 px-8" style={{ background: "#fff" }}>
               <div
@@ -245,19 +245,17 @@ export default function Index() {
                   className="font-cormorant text-6xl font-light"
                   style={{ color: "var(--blue-deep)" }}
                 >
-                  12
+                  21
                 </span>
               </div>
               <p
                 className="font-cormorant text-2xl mb-2 font-light"
                 style={{ color: "var(--blue-deep)" }}
               >
-                Суббота
+                Воскресенье
               </p>
               <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                Регистрация в 14:30
-                <br />
-                Начало торжества в 15:00
+                Начало торжества в 14:00
               </p>
             </div>
           </div>
