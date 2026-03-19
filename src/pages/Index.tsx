@@ -175,15 +175,14 @@ export default function Index() {
           <p className="uppercase tracking-[0.3em] text-xs mb-6" style={{ color: "var(--pink-accent)" }}>
             Приветствие
           </p>
-          <p
-            className="font-cormorant text-2xl leading-relaxed mb-6"
-            style={{ color: "var(--blue-deep)", fontStyle: "italic" }}
-          >
-            «Самое прекрасное в жизни — это когда два сердца находят друг друга и решают идти одним путём»
+          <h2 className="font-cormorant text-4xl mb-6 font-light" style={{ color: "var(--blue-deep)" }}>
+            Дорогие гости!
+          </h2>
+          <p className="text-sm leading-7 mb-4" style={{ color: "var(--text-muted)" }}>
+            Вы получили это сообщение, а значит, мы спешим поделиться с вами радостной новостью — у нас скоро свадьба!
           </p>
           <p className="text-sm leading-7" style={{ color: "var(--text-muted)" }}>
-            Дорогие друзья и близкие! Мы счастливы пригласить вас разделить с нами один из самых важных дней
-            нашей жизни. Ваше присутствие сделает этот праздник поистине незабываемым.
+            Мы приглашаем вас разделить с нами радость этого особенного события и стать частью нашей семейной истории. Ваше присутствие сделает наш день ещё более значимым и незабываемым.
           </p>
         </Section>
       </section>
