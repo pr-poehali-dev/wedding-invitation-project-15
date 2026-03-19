@@ -136,9 +136,11 @@ export default function Index() {
               fontWeight: 300,
               fontStyle: "italic",
             }}
-          >Елизавета
-&
-Сергей</h1>
+          >
+            Елизавета
+            <br />&amp;<br />
+            Сергей
+          </h1>
 
           <div className="flex items-center justify-center gap-5 mb-8">
             <div className="h-px w-14" style={{ background: "var(--pink-accent)" }} />
