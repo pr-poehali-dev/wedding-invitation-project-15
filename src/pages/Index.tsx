@@ -138,10 +138,27 @@ export default function Index() {
           </h1>
 
           <div className="flex items-center justify-center mb-8 mt-4">
-            <svg width="90" height="48" viewBox="0 0 90 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="30" cy="24" r="18" stroke="#c8849a" strokeWidth="3" fill="none"/>
-              <circle cx="60" cy="24" r="18" stroke="#4a7096" strokeWidth="3" fill="none"/>
-              <path d="M45 14 Q45 24 45 34" stroke="#c8849a" strokeWidth="1" strokeDasharray="2 2" opacity="0.4"/>
+            <svg width="110" height="56" viewBox="0 0 110 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#f5e6c0"/>
+                  <stop offset="30%" stopColor="#e8c97a"/>
+                  <stop offset="60%" stopColor="#d4a843"/>
+                  <stop offset="100%" stopColor="#f0d898"/>
+                </linearGradient>
+                <linearGradient id="gold2" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#f5e6c0"/>
+                  <stop offset="30%" stopColor="#e8c97a"/>
+                  <stop offset="60%" stopColor="#d4a843"/>
+                  <stop offset="100%" stopColor="#f0d898"/>
+                </linearGradient>
+              </defs>
+              {/* Левое кольцо */}
+              <circle cx="37" cy="28" r="20" stroke="url(#gold1)" strokeWidth="5" fill="none"/>
+              <circle cx="37" cy="28" r="20" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" fill="none" strokeDasharray="4 8" strokeLinecap="round"/>
+              {/* Правое кольцо */}
+              <circle cx="73" cy="28" r="20" stroke="url(#gold2)" strokeWidth="5" fill="none"/>
+              <circle cx="73" cy="28" r="20" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" fill="none" strokeDasharray="4 8" strokeLinecap="round"/>
             </svg>
           </div>
 
