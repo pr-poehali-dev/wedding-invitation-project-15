@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+
 import Icon from "@/components/ui/icon";
 
 const WEDDING_DATE = new Date("2026-06-21T14:00:00");
@@ -63,21 +64,8 @@ function Divider() {
 
 export default function Index() {
   const countdown = useCountdown(WEDDING_DATE);
-  const [playing, setPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
   const [form, setForm] = useState({ name: "", guests: "1", alcohol: [] as string[], music: "", attend: "" });
   const [submitted, setSubmitted] = useState(false);
-
-  const toggleMusic = () => {
-    if (!audioRef.current) return;
-    if (playing) {
-      audioRef.current.pause();
-      setPlaying(false);
-    } else {
-      audioRef.current.play().catch(() => {});
-      setPlaying(true);
-    }
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,19 +74,6 @@ export default function Index() {
 
   return (
     <div className="min-h-screen font-montserrat" style={{ background: "var(--bg-cream)" }}>
-      <audio ref={audioRef} loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
-      </audio>
-
-      {/* Music toggle */}
-      <button
-        onClick={toggleMusic}
-        className="fixed top-5 right-5 z-50 w-11 h-11 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
-        style={{ background: "var(--blue-light)", color: "var(--blue-deep)" }}
-        title={playing ? "Выключить музыку" : "Включить музыку"}
-      >
-        <Icon name={playing ? "Volume2" : "VolumeX"} size={18} />
-      </button>
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
