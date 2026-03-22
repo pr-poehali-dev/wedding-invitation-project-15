@@ -176,7 +176,7 @@ export default function Index() {
           <p className="uppercase tracking-[0.3em] text-xs mb-6" style={{ color: "var(--pink-accent)" }}>
             Приветствие
           </p>
-          <h2 className="font-cormorant text-4xl mb-6 font-light" style={{ color: "var(--blue-deep)" }}>
+          <h2 className="text-4xl mb-6" style={{ color: "var(--blue-deep)", fontFamily: "'Kudry Weird Headline', serif" }}>
             Дорогие гости!
           </h2>
           <p className="text-sm leading-7 mb-4" style={{ color: "var(--text-muted)" }}>
@@ -271,7 +271,7 @@ export default function Index() {
           <p className="uppercase tracking-[0.3em] text-xs mb-6" style={{ color: "var(--blue-mid)" }}>
             Место проведения
           </p>
-          <h2 className="font-cormorant text-4xl mb-3 font-light" style={{ color: "var(--blue-deep)" }}>
+          <h2 className="text-4xl mb-3" style={{ color: "var(--blue-deep)", fontFamily: "'Kudry Weird Headline', serif" }}>
             Свадебный коттедж «Крылья»
           </h2>
           <p className="text-sm mb-8" style={{ color: "var(--text-muted)" }}>
@@ -320,7 +320,7 @@ export default function Index() {
           <p className="uppercase tracking-[0.3em] text-xs mb-6" style={{ color: "var(--pink-accent)" }}>
             Дресс-код
           </p>
-          <h2 className="font-cormorant text-4xl mb-5 font-light" style={{ color: "var(--blue-deep)" }}>
+          <h2 className="text-4xl mb-5" style={{ color: "var(--blue-deep)", fontFamily: "'Kudry Weird Headline', serif" }}>
             Элегантная непринужденность
           </h2>
           <p className="text-sm leading-7 mb-8 max-w-md mx-auto" style={{ color: "var(--text-muted)" }}>
@@ -355,8 +355,8 @@ export default function Index() {
             Подтверждение
           </p>
           <h2
-            className="font-cormorant text-4xl mb-8 text-center font-light"
-            style={{ color: "var(--blue-deep)" }}
+            className="text-4xl mb-8 text-center"
+            style={{ color: "var(--blue-deep)", fontFamily: "'Kudry Weird Headline', serif" }}
           >
             Форма участия
           </h2>
