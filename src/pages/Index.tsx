@@ -122,13 +122,14 @@ export default function Index() {
           </p>
 
           <h1
-            className="font-cormorant my-2 py-[5px]"
+            className="my-2 py-[5px]"
             style={{
               fontSize: "clamp(3rem, 10vw, 6.5rem)",
               lineHeight: 1.05,
               color: "var(--blue-deep)",
-              fontWeight: 300,
-              fontStyle: "italic",
+              fontFamily: "'Kudry Weird Headline', serif",
+              fontWeight: 400,
+              fontStyle: "normal",
             }}
           >
             Елизавета
@@ -583,7 +584,7 @@ export default function Index() {
 
       {/* ── FOOTER ── */}
       <footer className="py-10 text-center" style={{ background: "var(--blue-deep)" }}>
-        <p className="font-cormorant text-3xl italic mb-1" style={{ color: "#fff" }}>
+        <p className="text-3xl mb-1" style={{ color: "#fff", fontFamily: "'Kudry Weird Headline', serif" }}>
           Елизавета &amp; Сергей
         </p>
         <p className="text-xs tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.45)" }}>
