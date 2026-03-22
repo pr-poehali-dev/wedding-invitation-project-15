@@ -271,30 +271,18 @@ export default function Index() {
             Место проведения
           </p>
           <h2 className="font-cormorant text-4xl mb-3 font-light" style={{ color: "var(--blue-deep)" }}>
-            Усадьба «Романтика»
+            Свадебный коттедж «Крылья»
           </h2>
           <p className="text-sm mb-8" style={{ color: "var(--text-muted)" }}>
-            Московская область, Одинцовский район, д. Лесные Поляны, 15
+            Свердловская область, 15 км, Тюменский тракт, п. Прохладный, КП «Новый исток»
           </p>
-          <div className="flex justify-center gap-8 flex-wrap">
-            {[
-              { icon: "Car", text: "Парковка" },
-              { icon: "UtensilsCrossed", text: "Банкет" },
-              { icon: "Trees", text: "Парк" },
-              { icon: "Music", text: "Живая музыка" },
-            ].map(({ icon, text }) => (
-              <div key={text} className="flex flex-col items-center gap-2">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ background: "#fff", border: "1px solid var(--blue-border)" }}
-                >
-                  <Icon name={icon} size={20} style={{ color: "var(--blue-deep)" }} />
-                </div>
-                <span className="text-xs" style={{ color: "var(--text-muted)" }}>
-                  {text}
-                </span>
-              </div>
-            ))}
+          <div className="flex justify-center">
+            <div
+              className="w-14 h-14 rounded-full flex items-center justify-center"
+              style={{ background: "#fff", border: "1px solid var(--blue-border)" }}
+            >
+              <Icon name="House" size={24} style={{ color: "var(--blue-deep)" }} />
+            </div>
           </div>
         </Section>
       </section>
