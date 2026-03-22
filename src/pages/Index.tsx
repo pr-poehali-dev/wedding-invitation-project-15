@@ -301,7 +301,7 @@ export default function Index() {
             style={{ border: "2px solid var(--blue-border)", height: 280 }}
           >
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=37.218810%2C55.697987&z=12&l=map"
+              src="https://yandex.ru/map-widget/v1/?text=%D1%83%D0%BB%D0%B8%D1%86%D0%B0+%D0%90%D1%85%D0%BC%D0%B0%D1%82%D0%BE%D0%B2%D0%BE%D0%B9+6+%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BE%D0%BA+%D0%9F%D1%80%D0%BE%D1%85%D0%BB%D0%B0%D0%B4%D0%BD%D1%8B%D0%B9+%D0%A1%D0%B2%D0%B5%D1%80%D0%B4%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C&z=15&l=map"
               width="100%"
               height="280"
               frameBorder="0"
@@ -309,9 +309,7 @@ export default function Index() {
               style={{ border: 0, display: "block" }}
             />
           </div>
-          <p className="text-center text-xs mt-3" style={{ color: "var(--text-muted)" }}>
-            Точный адрес отправим после подтверждения участия
-          </p>
+
         </Section>
       </section>
 
