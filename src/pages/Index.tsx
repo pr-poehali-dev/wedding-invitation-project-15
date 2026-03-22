@@ -313,59 +313,6 @@ export default function Index() {
         </Section>
       </section>
 
-      <Divider />
-
-      {/* ── ПРОГРАММА ── */}
-      <section className="py-20 px-6" style={{ background: "var(--blue-section)" }}>
-        <Section className="max-w-lg mx-auto">
-          <p className="uppercase tracking-[0.3em] text-xs mb-10 text-center" style={{ color: "var(--blue-mid)" }}>
-            Программа дня
-          </p>
-          <div className="relative">
-            <div
-              className="absolute left-5 top-0 bottom-0 w-px"
-              style={{ background: "var(--blue-border)" }}
-            />
-            {[
-              { time: "14:30", title: "Сбор гостей", desc: "Встреча и регистрация" },
-              { time: "15:00", title: "Церемония", desc: "Торжественная роспись, обмен клятвами" },
-              { time: "16:00", title: "Фотосессия", desc: "Прогулка по парку усадьбы" },
-              { time: "17:00", title: "Банкет", desc: "Торжественный ужин с живой музыкой" },
-              { time: "20:00", title: "Танцевальная программа", desc: "Первый танец, дискотека" },
-              { time: "00:00", title: "Финальный фейерверк", desc: "Незабываемое завершение вечера" },
-            ].map(({ time, title, desc }, i) => (
-              <div key={i} className="flex gap-6 mb-8">
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center z-10 shadow-sm flex-shrink-0"
-                  style={{ background: "#fff", border: "2px solid var(--blue-deep)" }}
-                >
-                  <span
-                    className="font-cormorant text-sm font-bold"
-                    style={{ color: "var(--blue-deep)" }}
-                  >
-                    {i + 1}
-                  </span>
-                </div>
-                <div className="pb-2">
-                  <p
-                    className="text-xs mb-1 font-medium tracking-wider"
-                    style={{ color: "var(--blue-mid)" }}
-                  >
-                    {time}
-                  </p>
-                  <p className="font-cormorant text-xl mb-0.5" style={{ color: "var(--blue-deep)" }}>
-                    {title}
-                  </p>
-                  <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-                    {desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
-      </section>
-
       {/* ── ДРЕСС-КОД ── */}
       <section className="py-20 px-6">
         <Section className="max-w-xl mx-auto text-center">
