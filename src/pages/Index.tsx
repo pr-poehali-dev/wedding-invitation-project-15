@@ -587,9 +587,9 @@ export default function Index() {
           Елизавета &amp; Сергей
         </p>
         <p className="text-xs tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.45)" }}>
-          12 · 09 · 2026
+          21 · 06 · 2026
         </p>
-        <div style={{ color: "rgba(255,255,255,0.25)", fontSize: "1.5rem" }}>❀</div>
+        <div style={{ color: "rgba(255,255,255,0.25)", fontSize: "1.5rem" }}>♥</div>
       </footer>
     </div>
   );
