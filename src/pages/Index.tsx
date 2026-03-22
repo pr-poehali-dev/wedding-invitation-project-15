@@ -65,7 +65,7 @@ export default function Index() {
   const countdown = useCountdown(WEDDING_DATE);
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [form, setForm] = useState({ name: "", guests: "1", menu: "", comment: "", attend: "" });
+  const [form, setForm] = useState({ name: "", guests: "1", alcohol: [] as string[], music: "", attend: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const toggleMusic = () => {
@@ -347,44 +347,6 @@ export default function Index() {
         </Section>
       </section>
 
-      <Divider />
-
-      {/* ── ВОПРОСЫ ── */}
-      <section className="py-20 px-6" style={{ background: "var(--blue-section)" }}>
-        <Section className="max-w-2xl mx-auto">
-          <p className="uppercase tracking-[0.3em] text-xs mb-8 text-center" style={{ color: "var(--blue-mid)" }}>
-            Вопросы для гостей
-          </p>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { q: "Какое ваше любимое воспоминание с нами?", icon: "Heart" },
-              { q: "Какую песню хотели бы услышать на вечере?", icon: "Music" },
-              { q: "Ваше пожелание молодожёнам в одном слове", icon: "Star" },
-              { q: "Что вы думаете о браке и любви?", icon: "MessageCircle" },
-            ].map(({ q, icon }) => (
-              <div
-                key={q}
-                className="rounded-2xl p-5 shadow-sm"
-                style={{ background: "#fff", border: "1px solid var(--blue-border)" }}
-              >
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center mb-3"
-                  style={{ background: "var(--pink-soft)" }}
-                >
-                  <Icon name={icon} size={16} style={{ color: "var(--pink-accent)" }} />
-                </div>
-                <p className="text-sm leading-6" style={{ color: "var(--text-muted)" }}>
-                  {q}
-                </p>
-                <p className="text-xs mt-3 italic" style={{ color: "var(--blue-mid)" }}>
-                  Ответьте в форме ниже ✦
-                </p>
-              </div>
-            ))}
-          </div>
-        </Section>
-      </section>
-
       {/* ── RSVP ── */}
       <section id="rsvp" className="py-20 px-6">
         <Section className="max-w-lg mx-auto">
@@ -457,10 +419,8 @@ export default function Index() {
                       onClick={() => setForm({ ...form, attend: val })}
                       className="py-3 rounded-xl text-sm transition-all hover:scale-[1.02]"
                       style={{
-                        background:
-                          form.attend === val ? "var(--blue-deep)" : "#fff",
-                        color:
-                          form.attend === val ? "#fff" : "var(--blue-deep)",
+                        background: form.attend === val ? "var(--blue-deep)" : "#fff",
+                        color: form.attend === val ? "#fff" : "var(--blue-deep)",
                         border: `1px solid ${form.attend === val ? "var(--blue-deep)" : "var(--blue-border)"}`,
                       }}
                     >
@@ -470,103 +430,109 @@ export default function Index() {
                 </div>
               </div>
 
-              {/* Гости */}
-              <div>
-                <label
-                  className="block text-xs uppercase tracking-widest mb-2"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Количество гостей
-                </label>
-                <select
-                  value={form.guests}
-                  onChange={(e) => setForm({ ...form, guests: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl text-sm outline-none"
-                  style={{
-                    background: "var(--blue-section)",
-                    border: "1px solid var(--blue-border)",
-                    color: "var(--blue-deep)",
-                  }}
-                >
-                  {["1", "2", "3", "4", "5+"].map((n) => (
-                    <option key={n} value={n}>
-                      {n} {n === "1" ? "гость" : n === "5+" ? "гостей" : "гостя"}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Меню */}
-              <div>
-                <label
-                  className="block text-xs uppercase tracking-widest mb-3"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Выбор меню
-                </label>
-                <div className="space-y-2">
-                  {[
-                    { val: "meat", emoji: "🥩", label: "Мясное меню", desc: "Говядина / курица" },
-                    { val: "fish", emoji: "🐟", label: "Рыбное меню", desc: "Лосось / морепродукты" },
-                    { val: "veg", emoji: "🥗", label: "Вегетарианское", desc: "Без мяса и рыбы" },
-                  ].map(({ val, emoji, label, desc }) => (
-                    <button
-                      type="button"
-                      key={val}
-                      onClick={() => setForm({ ...form, menu: val })}
-                      className="w-full px-4 py-3 rounded-xl text-left transition-all hover:scale-[1.01] flex items-center gap-3"
+              {/* Доп. вопросы — только при "Да" */}
+              {form.attend === "yes" && (
+                <>
+                  {/* Количество гостей */}
+                  <div>
+                    <label
+                      className="block text-xs uppercase tracking-widest mb-2"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      Количество гостей
+                    </label>
+                    <select
+                      value={form.guests}
+                      onChange={(e) => setForm({ ...form, guests: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl text-sm outline-none"
                       style={{
-                        background:
-                          form.menu === val ? "var(--blue-deep)" : "#fff",
-                        border: `1px solid ${form.menu === val ? "var(--blue-deep)" : "var(--blue-border)"}`,
+                        background: "var(--blue-section)",
+                        border: "1px solid var(--blue-border)",
+                        color: "var(--blue-deep)",
                       }}
                     >
-                      <span className="text-xl">{emoji}</span>
-                      <div>
-                        <p
-                          className="text-sm font-medium"
-                          style={{ color: form.menu === val ? "#fff" : "var(--blue-deep)" }}
-                        >
-                          {label}
-                        </p>
-                        <p
-                          className="text-xs"
-                          style={{
-                            color:
-                              form.menu === val
-                                ? "rgba(255,255,255,0.65)"
-                                : "var(--text-muted)",
-                          }}
-                        >
-                          {desc}
-                        </p>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
+                      {["1", "2", "3", "4", "5+"].map((n) => (
+                        <option key={n} value={n}>
+                          {n} {n === "1" ? "гость" : n === "5+" ? "гостей" : "гостя"}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
-              {/* Пожелания */}
-              <div>
-                <label
-                  className="block text-xs uppercase tracking-widest mb-2"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Ваши пожелания
-                </label>
-                <textarea
-                  value={form.comment}
-                  onChange={(e) => setForm({ ...form, comment: e.target.value })}
-                  placeholder="Пожелания, особые предпочтения, ответы на вопросы выше..."
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl text-sm outline-none resize-none"
-                  style={{
-                    background: "var(--blue-section)",
-                    border: "1px solid var(--blue-border)",
-                    color: "var(--blue-deep)",
-                  }}
-                />
-              </div>
+                  {/* Алкоголь */}
+                  <div>
+                    <label
+                      className="block text-xs uppercase tracking-widest mb-2"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      Мы хотим, чтобы свадьба прошла весело, поэтому просим Вас выбрать алкоголь, который Вы предпочитаете
+                    </label>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {[
+                        "Шампанское",
+                        "Красное сухое вино",
+                        "Красное полусладкое вино",
+                        "Красное сладкое вино",
+                        "Белое сухое вино",
+                        "Белое полусладкое вино",
+                        "Белое сладкое вино",
+                        "Виски",
+                        "Коньяк",
+                        "Ром",
+                        "Джин",
+                        "Текила",
+                        "Водка",
+                      ].map((drink) => {
+                        const selected = form.alcohol.includes(drink);
+                        return (
+                          <button
+                            type="button"
+                            key={drink}
+                            onClick={() =>
+                              setForm({
+                                ...form,
+                                alcohol: selected
+                                  ? form.alcohol.filter((d) => d !== drink)
+                                  : [...form.alcohol, drink],
+                              })
+                            }
+                            className="px-3 py-2 rounded-full text-xs transition-all hover:scale-[1.03]"
+                            style={{
+                              background: selected ? "var(--blue-deep)" : "#fff",
+                              color: selected ? "#fff" : "var(--blue-deep)",
+                              border: `1px solid ${selected ? "var(--blue-deep)" : "var(--blue-border)"}`,
+                            }}
+                          >
+                            {drink}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Музыкальные пожелания */}
+                  <div>
+                    <label
+                      className="block text-xs uppercase tracking-widest mb-2"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      Музыкальные композиции, которые хотели бы услышать на празднике
+                    </label>
+                    <textarea
+                      value={form.music}
+                      onChange={(e) => setForm({ ...form, music: e.target.value })}
+                      placeholder="Ваши пожелания..."
+                      rows={3}
+                      className="w-full px-4 py-3 rounded-xl text-sm outline-none resize-none"
+                      style={{
+                        background: "var(--blue-section)",
+                        border: "1px solid var(--blue-border)",
+                        color: "var(--blue-deep)",
+                      }}
+                    />
+                  </div>
+                </>
+              )}
 
               <button
                 type="submit"
