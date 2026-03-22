@@ -560,22 +560,22 @@ export default function Index() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="tel:+79001234567"
-              className="flex items-center justify-center gap-3 px-6 py-3 rounded-xl transition-all hover:opacity-80"
-              style={{ background: "#fff", border: "1px solid var(--blue-border)", color: "var(--blue-deep)" }}
-            >
-              <Icon name="Phone" size={16} />
-              <span className="text-sm">+7 (900) 123-45-67</span>
-            </a>
-            <a
-              href="https://wa.me/79001234567"
+              href="https://vk.com/sergreatin"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 px-6 py-3 rounded-xl transition-all hover:opacity-80"
+              className="flex items-center justify-center px-8 py-3 rounded-xl transition-all hover:opacity-80"
               style={{ background: "#fff", border: "1px solid var(--blue-border)", color: "var(--blue-deep)" }}
             >
-              <Icon name="MessageCircle" size={16} />
-              <span className="text-sm">WhatsApp</span>
+              <span className="text-sm">Сергей</span>
+            </a>
+            <a
+              href="https://vk.com/li_sa15"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center px-8 py-3 rounded-xl transition-all hover:opacity-80"
+              style={{ background: "#fff", border: "1px solid var(--blue-border)", color: "var(--blue-deep)" }}
+            >
+              <span className="text-sm">Елизавета</span>
             </a>
           </div>
         </Section>
