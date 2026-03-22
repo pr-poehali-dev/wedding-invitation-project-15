@@ -276,13 +276,16 @@ export default function Index() {
           <p className="text-sm mb-8" style={{ color: "var(--text-muted)" }}>
             Свердловская область, 15 км, Тюменский тракт, п. Прохладный, КП «Новый исток»
           </p>
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center gap-3">
             <div
               className="w-14 h-14 rounded-full flex items-center justify-center"
               style={{ background: "#fff", border: "1px solid var(--blue-border)" }}
             >
               <Icon name="House" size={24} style={{ color: "var(--blue-deep)" }} />
             </div>
+            <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+              улица Ахматовой, д.6
+            </p>
           </div>
         </Section>
       </section>
