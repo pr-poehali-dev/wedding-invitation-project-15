@@ -62,14 +62,36 @@ function Divider() {
   );
 }
 
+const RSVP_URL = "https://functions.poehali.dev/4c2f850d-a8a0-421d-9062-f5ab3df8e425";
+
 export default function Index() {
   const countdown = useCountdown(WEDDING_DATE);
   const [form, setForm] = useState({ name: "", guests: "1", alcohol: [] as string[], music: "", attend: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch(RSVP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.error || "Ошибка отправки. Попробуйте ещё раз.");
+      }
+    } catch {
+      setError("Ошибка сети. Попробуйте ещё раз.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -527,12 +549,17 @@ export default function Index() {
                 </>
               )}
 
+              {error && (
+                <p className="text-sm text-center" style={{ color: "#c0392b" }}>{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl text-sm uppercase tracking-widest font-medium transition-all hover:opacity-90 hover:scale-[1.02]"
+                disabled={loading}
+                className="w-full py-4 rounded-xl text-sm uppercase tracking-widest font-medium transition-all hover:opacity-90 hover:scale-[1.02] disabled:opacity-60"
                 style={{ background: "var(--blue-deep)", color: "#fff" }}
               >
-                Отправить ответ
+                {loading ? "Отправляем..." : "Отправить ответ"}
               </button>
             </form>
           )}

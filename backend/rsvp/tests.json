@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "Save RSVP - attending",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тест Тестов",
+        "attend": "yes",
+        "guests": "2",
+        "alcohol": ["Шампанское", "Виски"],
+        "music": "Группа Кино"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"success": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Save RSVP - not attending",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Другой Гость",
+        "attend": "no"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"success": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
